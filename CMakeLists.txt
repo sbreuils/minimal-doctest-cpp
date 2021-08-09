@@ -31,7 +31,6 @@ else()
 	add_library(minimalBinomial ${source_files} ${header_files})
 endif()
 
-message("inside test v3")
 
 if (MSVC)   
     target_compile_features(minimalBinomial PRIVATE cxx_std_17) 

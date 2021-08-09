@@ -1,7 +1,6 @@
-#include <array>
-#include <iostream>
-#include <utility>
 
+#ifndef FACTORIAL
+#define FACTORIAL
 
 
 template<unsigned int n>
@@ -19,4 +18,4 @@ struct factorial<0>
     enum { value = 1 };
 };
 
-
+#endif

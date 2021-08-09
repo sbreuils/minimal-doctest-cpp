@@ -27,8 +27,6 @@ target_compile_definitions(minimal_test PRIVATE
 )
 
 if (NOT MSVC)
-    message("I am here v0")
-
     target_compile_options(doctest
     INTERFACE
         -fno-omit-frame-pointer
@@ -37,7 +35,6 @@ if (NOT MSVC)
     )
 endif()
 
-message("I am here v1 " ${CMAKE_CXX_COMPILER_ID})
 
 
 # Place the test executable at the project binary directory instead of in the nested subfolder
@@ -45,4 +42,3 @@ set_target_properties(minimal_test
     PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
 )
-message("I am here v2")

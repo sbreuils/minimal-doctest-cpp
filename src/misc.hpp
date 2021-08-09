@@ -1,21 +1,13 @@
+
+#ifndef MISCE
+#define MISCE
+
+
 #include <array>
 #include <iostream>
 
-#include "binomial.hpp"
 
 
-
-/**
-Compute the binomial with given n and k in constant time (using a lookup table).
-n and k are guaranteed to be positive.
-k and n must not be larger than MAX_BINOMIAL
-*/
-uint32_t
-ubinomial(const uint32_t n,
-          const uint32_t k)
-{
-    return BINOMIAL[n*MAX_BINOMIAL+k];
-}
 
 /**
    Prints the matrice to the standard output.
@@ -35,4 +27,4 @@ print_mat(const std::array<std::array<T, n>, n> & mat)
 }
 
 
-
+#endif

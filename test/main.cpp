@@ -1,7 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 #include <factorial.hpp>
-#include <misc.hpp>
 
 // Cheat sheet
 // TEST_SUITE_BEGIN defines the start of a scope of tests grouped under a suite
@@ -43,6 +42,8 @@
 TEST_CASE("binomial and factorial")
 {
 
-
-
+    SUBCASE("factorial simple case"){
+        const int n = 6, k= 3;
+        CHECK_EQ(factorial<n>::value / (factorial<k>::value*factorial<n-k>::value) , 20); //);
+    }
 }
