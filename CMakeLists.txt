@@ -10,7 +10,7 @@ file(GLOB_RECURSE header_files src/*.hpp)
 # display info
 message(STATUS "  sources")
 foreach(src_file ${source_files})
-    message("          " ${src_file})
+    message("          " ${source_files})
 endforeach()
 message(STATUS "  headers")
 foreach(src_file ${header_files})
@@ -26,12 +26,12 @@ endif()
 
 # generate a library
 if (MSVC)
-	add_library(minimalBinomial PRIVATE ${header_files})
+	add_library(minimalBinomial ${source_files} ${header_files})
 else()
 	add_library(minimalBinomial ${source_files} ${header_files})
 endif()
 
-
+message("inside test v3")
 
 if (MSVC)   
     target_compile_features(minimalBinomial PRIVATE cxx_std_17) 
@@ -49,7 +49,7 @@ set(CMAKE_CXX_FLAGS_DEBUG_INIT "-g")
 include_directories(src)
 
 if(MINIMAL_ENABLE_TESTS)
-
+    message("test enabled")
     enable_testing()
     add_subdirectory(test)
 endif()

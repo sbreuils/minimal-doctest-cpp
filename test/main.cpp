@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 #include <factorial.hpp>
-
+#include <misc.hpp>
 
 // Cheat sheet
 // TEST_SUITE_BEGIN defines the start of a scope of tests grouped under a suite

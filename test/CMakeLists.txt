@@ -16,7 +16,7 @@ add_executable(minimal_test
     test_factorial.cpp
 )
 
-target_link_libraries(minimal_test PRIVATE minimalBinomial doctest)
+target_link_libraries(minimal_test minimalBinomial doctest)
 target_compile_features(minimal_test PRIVATE cxx_std_17)
 target_compile_definitions(minimal_test PRIVATE
     DOCTEST_CONFIG_SUPER_FAST_ASSERTS # uses a function call for asserts to speed up compilation
@@ -27,6 +27,8 @@ target_compile_definitions(minimal_test PRIVATE
 )
 
 if (NOT MSVC)
+    message("I am here v0")
+
     target_compile_options(doctest
     INTERFACE
         -fno-omit-frame-pointer
@@ -35,8 +37,12 @@ if (NOT MSVC)
     )
 endif()
 
+message("I am here v1 " ${CMAKE_CXX_COMPILER_ID})
+
+
 # Place the test executable at the project binary directory instead of in the nested subfolder
 set_target_properties(minimal_test
     PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
 )
+message("I am here v2")

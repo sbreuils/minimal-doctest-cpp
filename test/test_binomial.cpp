@@ -1,7 +1,6 @@
 #include <doctest/doctest.h>
 
 #include <misc.hpp>
-#include <sys/_types/_key_t.h>
 
 
 TEST_CASE("factorial with static array")
